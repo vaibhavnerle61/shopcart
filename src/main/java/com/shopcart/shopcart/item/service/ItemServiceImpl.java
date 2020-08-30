@@ -1,6 +1,5 @@
 package com.shopcart.shopcart.item.service;
 
-import com.shopcart.shopcart.item.controller.ItemController;
 import com.shopcart.shopcart.item.domain.Image;
 import com.shopcart.shopcart.item.domain.Item;
 import com.shopcart.shopcart.item.repository.ImageRepository;
@@ -10,7 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
@@ -25,7 +23,7 @@ public class ItemServiceImpl implements ItemSerivce {
 
     private Map<String, Object> map = new HashMap<>();
 
-    private final Logger logger = LoggerFactory.getLogger(ItemController.class);
+    private final Logger logger = LoggerFactory.getLogger(ItemServiceImpl.class);
 
     @Autowired
     private ImageRepository imageRepository;
@@ -50,6 +48,7 @@ public class ItemServiceImpl implements ItemSerivce {
 
                 logger.info("original file name--->" + multipartFile.getOriginalFilename());
                 Image image = new Image();
+                image.setName(multipartFile.getOriginalFilename());
                 image.setImagePath(name);
                 image.setSize(multipartFile.getSize());
                 image.setType(multipartFile.getContentType());

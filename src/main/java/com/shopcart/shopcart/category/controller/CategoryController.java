@@ -16,6 +16,7 @@ import static com.shopcart.shopcart.utils.Constants.*;
 
 @RestController
 @RequestMapping(value = "/api/category")
+@CrossOrigin(allowedHeaders = {"Origin", "X-Requested-With", "Content-Type", "Accept", "Authorization"}, methods = {RequestMethod.POST, RequestMethod.GET, RequestMethod.PUT, RequestMethod.DELETE})
 public class CategoryController {
 
     @Autowired
