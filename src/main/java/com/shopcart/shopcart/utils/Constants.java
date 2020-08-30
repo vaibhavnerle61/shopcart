@@ -6,6 +6,5 @@ public interface Constants {
     String RESPONSE = "response";
     String SUCCESS = "success";
     String FAIL = "fail";
-    String NOT_FOUND = "notFound";
     String RESULT = "result";
 }

@@ -23,7 +23,7 @@ public class Image {
 
     private String imagePath;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonBackReference
     @JoinColumn(name = "item_id")
     private Item item;

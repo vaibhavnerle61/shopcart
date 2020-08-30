@@ -46,7 +46,7 @@ public class ItemServiceImpl implements ItemSerivce {
             attachment.forEach(multipartFile -> {
 
                 String ph = multipartFile.getOriginalFilename();
-                String name = "Photo_" + System.currentTimeMillis() + "_" + ph;
+                String name = "Image_" + System.currentTimeMillis() + "_" + ph;
 
                 logger.info("original file name--->" + multipartFile.getOriginalFilename());
                 Image image = new Image();

@@ -22,7 +22,7 @@ public class Item {
     @Column(length = 250)
     private String itemDescription;
 
-    @OneToMany(mappedBy = "item",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "item",cascade = CascadeType.ALL,fetch = FetchType.LAZY)
     @JsonManagedReference
     private List<Image> imageList;
 
